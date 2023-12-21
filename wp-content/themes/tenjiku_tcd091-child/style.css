@@ -1,0 +1,48 @@
+/*
+Theme Name: TENJIKU Child
+Theme URI: https://tcd-theme.com/tcd091/
+Template: tenjiku_tcd091
+Author: TCD
+Author URI: https://tcd-theme.com/
+Description: "TENJIKU" is TCD's 91st WordPress theme and is inspired by the best Chinese restaurant. The beautiful top page attracts people, and the gallery page brings your products to the world of glamour.
+Version: 2.0.1702971393
+Updated: 2023-12-19 16:36:33
+
+*/
+
+
+/* 
+ *cw_editor STR 
+ */
+
+#page_header {
+    background-color: #1c5088!important;
+}
+
+#page_header img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+@media screen and (max-height: 700px) {
+    #page_header .catch {
+        font-size: 30px!important;
+    }
+}
+
+@media screen and (max-width: 1065px) {
+    #page_header img {
+        object-fit: cover!important;
+    }
+}
+
+@media screen and (max-height: 100%) {
+    #page_header img {
+        object-fit: cover!important;
+    }
+}
+
+/* 
+ *cw_editor STR 
+ */
