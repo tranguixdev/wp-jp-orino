@@ -5,7 +5,9 @@ Template Name:LP page
 __('LP page', 'tcd-tenjiku');
 ?>
 <?php
-     get_header();
+    $current_url = home_url( add_query_arg( array(), $wp->request ) );
+  
+    get_header();
      $options = get_design_plus_option();
      $catch = get_post_meta($post->ID, 'page_header_catch', true);
      $catch_mobile = get_post_meta($post->ID, 'page_header_catch_mobile', true);
@@ -64,9 +66,9 @@ __('LP page', 'tcd-tenjiku');
  <?php }; ?>
 
  <?php if(!empty($bg_image)) { ?>
-  <!-- cw_editor STR -->
+  <!-- cw_editor  responsive hero image according to screen height -->
   <!-- <div class="bg_image" style="background:url(<?php echo esc_attr($bg_image[0]); ?>) no-repeat center top; background-size:cover;"></div> -->
-  <img src="<?php echo esc_attr($bg_image[0]); ?>">
+  <img class="<?php echo strpos($current_url, 'brand') == false ? 'center-img' : 'cover-img';?>" src="<?php echo esc_attr($bg_image[0]); ?>" >
   <!-- cw_editor END -->
  <?php }; ?>
 
@@ -97,36 +99,5 @@ __('LP page', 'tcd-tenjiku');
   </article>
 
  </div><!-- END #main_col -->
-
- <?php
-      // widget ------------------------
-      if($page_layout == 'type1'){
-        get_sidebar();
-      }
- ?>
-
 </div><!-- END #main_contents -->
-
-<!-- cw_editor STR -->
-<script>
-  var bResizeH = false;
-  var deviceH = window.screen.availHeight;
-
-  document.addEventListener('DOMContentLoaded',function(){
-
-    window.addEventListener('resize', function(event) {
-      if (deviceH > window.innerHeight) bResizeH = true;
-      else bResizeH = false;
-
-      if (!bResizeH || window.outerWidth == window.innerWidth) {
-        jQuery('#page_header img').css({'object-fit': 'cover'});
-      } else {
-        jQuery('#page_header img').css("object-fit", "contain");
-      }
-    });
-
-  });
-</script>
-<!-- cw_editor END -->
-
 <?php get_footer(); ?>

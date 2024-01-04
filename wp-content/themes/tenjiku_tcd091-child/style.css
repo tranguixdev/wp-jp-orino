@@ -10,39 +10,50 @@ Updated: 2023-12-19 16:36:33
 
 */
 
-
-/* 
- *cw_editor STR 
+/*  
+ *cw_editor responsive hero image according to screen height 
  */
 
-#page_header {
+ #header_slider, #page_header {
     background-color: #1c5088!important;
 }
 
-#page_header img {
+#header_slider .bg_image {
+    filter: blur(0)!important;
+    transform: scale(1)!important;
+}
+
+#page_header .center-img, #header_slider .bg_image {
     width: 100%;
     height: 100vh;
+    background-position: center center;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+@media screen and (max-width: 1282px){
+    #page_header {
+        height: auto!important;
+    }
+
+    #page_header .center-img, #header_slider .bg_image {
+        height: auto!important;
+        margin: 0 auto!important;
+    }
+}
+
+#header_slider .bg_image.mobile {
+    height: 100%!important;
+    background-position: center top!important;
+    object-fit: cover!important;
+}
+
+#page_header .cover-img {
     object-fit: cover;
-}
-
-@media screen and (max-height: 700px) {
-    #page_header .catch {
-        font-size: 30px!important;
-    }
-}
-
-@media screen and (max-width: 1065px) {
-    #page_header img {
-        object-fit: cover!important;
-    }
-}
-
-@media screen and (max-height: 100%) {
-    #page_header img {
-        object-fit: cover!important;
-    }
+    width: 100%;
+    height: 100%;
 }
 
 /* 
- *cw_editor STR 
+ *cw_editor End 
  */

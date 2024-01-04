@@ -73,7 +73,7 @@
 </div>
 
 <div id="main_contents">
-efwerwerwerwre
+
 
  <?php
       // widget ------------------------
